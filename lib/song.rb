@@ -51,14 +51,8 @@ class Song
   def self.artist_count
     hash_a = Hash.new
     @@artists.each do |x|
-      if hash_a.include?(x)
-        if hash_a[x] == 1
-          hash_a[x] = 2
-        elsif hash_a[x] == 2
-          hash_a[x] = 3
-        elsif hash_a[x] == 3
-          hash_a[x] = 4
-        end
+      if hash_a[x]
+        hash_a[x] += 1
       else
         hash_a[x] = 1
       end
